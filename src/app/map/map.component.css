@@ -1,0 +1,15 @@
+.title{
+    text-align: center;
+}
+
+.map{
+    padding: 3em 0;
+    background: linear-gradient(#FEFEFE, #888888);
+}
+
+.content-map{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

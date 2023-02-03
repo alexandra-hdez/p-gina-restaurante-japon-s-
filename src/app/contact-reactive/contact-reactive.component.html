@@ -1,0 +1,37 @@
+<br>
+<h1  id="contacto">Contacto</h1>
+<form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+    <div class="mb-4">
+        <label for="name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="name" name="name" required formControlName="name">
+        <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['minlength']" class="invalid-feeback" class="alert alert-danger">El nombre debe tener más de 4 caracteres.</div>
+        <span *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['minlength']" class="badge text-bg-warning">Debes colocar mínimo 4 caracteres</span>
+    </div>
+    <div>
+        <label for="validationDefault03" class="form-label">Correo</label>
+        <div class="input-group">
+        <span class="input-group-text">@</span>
+        <input type="text" class="form-control" id="email" name="email" required formControlName="email">
+        <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['email']" class="invalid-feeback" class="alert alert-danger">Campo requido</div>
+        <span *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.errors?.['email']" class="badge text-bg-warning">Debes colocar una dirección de correo válida</span>
+    </div>
+    </div>
+      <br>
+    <div class="input-group">
+        <span class="input-group-text">Asunto</span>
+        <textarea class="form-control" aria-label="Affair textarea" required formControlName="affair"></textarea>
+        <div *ngIf="contactForm.get('affair')?.touched && contactForm.get('affair')?.errors?.['maxlength']" class="invalid-feeback" class="alert alert-danger">El asunto debe tener máximo 50 caracteres.</div>
+        <span *ngIf="contactForm.get('affair')?.touched && contactForm.get('affair')?.errors?.['maxlength']" class="badge text-bg-warning">Debes colocar máximo 50 caracteres</span>
+    </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-text">Mensaje</span>
+        <textarea class="form-control" aria-label="Message textarea" required formControlName="message"></textarea>
+        <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.errors?.['maxlength']" class="invalid-feeback" class="alert alert-danger">El mensaje debe tener máximo 50 caracteres.</div>
+        <span *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.errors?.['maxlength']" class="badge text-bg-warning">Debes colocar máximo 50 caracteres</span>
+    </div>
+      <br>
+    <div class="d-grid gap-2 col-4 float-end">
+        <button type="submit" class="btn btn-info btn-lg"[disabled]="contactForm.invalid">Enviar</button>
+    </div>
+</form>

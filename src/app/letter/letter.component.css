@@ -1,0 +1,10 @@
+.btn-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-menu a:hover{
+    background-color: gray;
+    cursor:default;
+}
